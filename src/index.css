@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-military-background text-military-text;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .military-panel {
+    @apply bg-military-surface/80 backdrop-blur-sm border border-military-accent/20 rounded-lg p-4;
+  }
+  
+  .military-button {
+    @apply px-4 py-2 bg-military-surface border border-military-accent text-military-accent 
+           hover:bg-military-accent/20 transition-all duration-300 rounded-md
+           focus:outline-none focus:ring-2 focus:ring-military-accent/50;
+  }
+  
+  .military-button-warning {
+    @apply military-button border-military-warning text-military-warning 
+           hover:bg-military-warning/20 focus:ring-military-warning/50;
+  }
+  
+  .military-text-glow {
+    @apply text-military-accent drop-shadow-[0_0_10px_rgba(0,255,102,0.5)];
+  }
+  
+  .military-grid {
+    @apply grid gap-4 p-4;
+    background-image: radial-gradient(circle at 1px 1px, theme(colors.military.accent/20) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+}
